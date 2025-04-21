@@ -1,0 +1,154 @@
+:root{
+  --background:#fdfdfd;
+  --body-text: #333;
+  --white: #fff;
+  --header-brder-btm: #eee;
+  --primary: #007BFF;
+  --hover: #0056b3;
+  --foter-brder-tp: #ddd;
+  --mode: #646464;
+}
+.darkmode{
+  --background:#020202;
+  --body-text: #ccc;
+  --white: #000000;
+  --header-brder-btm: #111111;
+  --primary: #0056b3;
+  --hover: #007BFF;
+  --foter-brder-tp: #222;
+  --mode: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--background);
+  color: var(--body-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--header-brder-btm);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.logo img {
+  display: block;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--body-text);
+  font-weight: bold;
+}
+
+nav a.active {
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-grow: 1; /* Ensures content takes up remaining space */
+}
+
+#hero {
+  background: var(--primary);
+  color: var(--white);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio-grid .project {
+  flex: 1 1 calc(50% - 20px);
+  max-width: 500px; /* Set a maximum width for each image container */
+}
+
+.portfolio-grid .project img {
+  width: 100%; /* Make the image responsive */
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Crop the image if it doesn't fit */
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+form button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--hover);
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  background: var(--primary);
+  text-align: center;
+  border-top: 1px solid var(--foter-brder-tp);
+  color: var(--white);
+}
+
+span{
+  color: var(--primary);
+  font-weight: bolder;
+}
+
+#theme-switch{
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--mode);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#theme-switch svg{
+  fill: var(--primary);
+}
+
+#theme-switch svg:last-child{
+  display: none;
+}
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+  display: block;
+}
